@@ -1,21 +1,10 @@
-class Circle(object):
+def reduce(accumulator, iter, start=None):
+    for item in iter:
+        if start is None:
+            start = item
+        else:
+            start = accumulator(start, item)
 
-    pi = 3.14
+    return start
 
-    def __init__(self, **params):
-        self.props = params
-        self.radius = params['radius']
-        self.color = params['color']
-        self.area = Circle.pi * (self.radius**2)
-
-    def get_area(self):
-        return self.area
-
-    def set_radius(self, radius):
-        self.radius = radius
-
-    def get_props(self):
-        return self.props
-
-x = Circle(radius=1, color='red')
-print(x.get_props())
+print(reduce(lambda x, y: x * y, [1, 2, 3, 4], 2))
