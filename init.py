@@ -1,10 +1,10 @@
-def reduce(accumulator, iter, start=None):
-    for item in iter:
-        if start is None:
-            start = item
-        else:
-            start = accumulator(start, item)
+def reduce(accumulator, iterable, start=None):
+    collection = iter(iterable)
+    if start is None:
+        start = next(collection)
+    for item in collection:
+        start = accumulator(start, item)
 
     return start
 
-print(reduce(lambda x, y: x * y, [1, 2, 3, 4], 2))
+print(reduce(lambda x, y: x + y, [1, 2, 3, 4], 3))
