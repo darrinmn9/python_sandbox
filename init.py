@@ -7,4 +7,7 @@ def reduce(accumulator, iterable, start=None):
 
     return start
 
-print(reduce(lambda x, y: x + y, [1, 2, 3, 4], 3))
+x = iter([1, 2, 3, 4])
+
+for item in x:
+    print(item)
