@@ -1,13 +1,16 @@
-def reduce(accumulator, iterable, start=None):
-    collection = iter(iterable)
-    if start is None:
-        start = next(collection)
-    for item in collection:
-        start = accumulator(start, item)
+from collections import defaultdict
 
-    return start
+d = {'hello': 'world'}
 
-x = iter([1, 2, 3, 4])
+try:
+    print(d['hellos'])
+except:
+    print('no key in dict')
 
-for item in x:
-    print(item)
+x = defaultdict(lambda: 0)
+
+x['hello'] = 'world'
+
+print(x['hello'])
+
+print(x['not valid'])
