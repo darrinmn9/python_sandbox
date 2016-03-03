@@ -1,12 +1,7 @@
-from collections import OrderedDict
+from collections import namedtuple
 
-x = {}
-x['a'] = 1
-x['b'] = 2
+Dog = namedtuple('Dog', ['bark', 'run'])
 
-y = OrderedDict()
-y['a'] = 1
-y['b'] = 2
+my_dog = Dog(bark=5, run='run')
 
-for k, v in x.items():
-    print('x:', k, v)
+print(my_dog.bark, my_dog[1])
