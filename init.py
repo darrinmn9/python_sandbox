@@ -1,16 +1,12 @@
-from collections import defaultdict
+from collections import OrderedDict
 
-d = {'hello': 'world'}
+x = {}
+x['a'] = 1
+x['b'] = 2
 
-try:
-    print(d['hellos'])
-except:
-    print('no key in dict')
+y = OrderedDict()
+y['a'] = 1
+y['b'] = 2
 
-x = defaultdict(lambda: 0)
-
-x['hello'] = 'world'
-
-print(x['hello'])
-
-print(x['not valid'])
+for k, v in x.items():
+    print('x:', k, v)
