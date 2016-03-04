@@ -1,7 +1,8 @@
-from collections import namedtuple
+from collections import Counter
 
-Dog = namedtuple('Dog', ['bark', 'run'])
 
-my_dog = Dog(bark=5, run='run')
+l = [1, 2, 2, 2, 2, 3, 3, 3, 1, 2, 1, 12, 3, 2, 32, 1, 21, 1, 223, 1]
 
-print(my_dog.bark, my_dog[1])
+print(Counter(l))
+
+print(Counter('aabsbsbsbhshhbbsbs'))
