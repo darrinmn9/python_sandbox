@@ -7,8 +7,9 @@ def profit(stock_prices):
 
     for price in stock_prices[1:]:
         min_price = min(min_price, price)
-        if (price - min_price > profit):
-            profit = price - min_price
+        current_profit = price - min_price
+        if (current_profit > profit):
+            profit = current_profit
 
     return profit
 
